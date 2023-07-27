@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /Content/css?
+Allow: /Content/themes/base/css?
+Allow: /bundles/jquery
+Allow: /bundles/system
+Allow: /bundles/maps
+Disallow: /*?
+Disallow: /images
+Disallow: /account
+Disallow: /help
+Disallow: /subscription
+Disallow: /agreement
+Disallow: /contacts
+Disallow: /api
+Disallow: /edit
+Disallow: /moscow
+Host: zagorod-50.ru
