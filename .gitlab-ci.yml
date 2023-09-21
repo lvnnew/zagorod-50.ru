@@ -1,0 +1,11 @@
+deploy:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - echo "$S3CMD_CONFIG" > s3cfg
+    - apk add --no-cache s3cmd
+    - s3cmd --config=s3cfg ls s3://$S3_BUCKET/$CI_PROJECT_NAME/ || s3cmd --config=s3cfg mb s3://$S3_BUCKET/$CI_PROJECT_NAME/
+    - s3cmd --config=s3cfg sync -v . s3://$S3_BUCKET/$CI_PROJECT_NAME/
+    - echo "Deployment successful"
+  only:
+    - master
